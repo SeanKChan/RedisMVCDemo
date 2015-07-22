@@ -42,7 +42,7 @@ namespace RedisMVCDemo.Redis
 
         }
         /// <summary>
-        /// 客户端缓存操作对象
+        /// 获取客户端缓存操作对象
         /// </summary>
         /// <returns></returns>
         public static IRedisClient GetClient()
