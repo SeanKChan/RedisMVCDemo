@@ -6,6 +6,10 @@ using System.Web;
 
 namespace RedisMVCDemo.Redis
 {
+
+    /// <summary>
+    /// 记录连接redis信息，此信息和配置文件中的RedisConfig相对应
+    /// </summary>
     public sealed class RedisConfigInfo : ConfigurationSection
     {
         public static RedisConfigInfo GetConfig()

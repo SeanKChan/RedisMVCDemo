@@ -1,0 +1,31 @@
+﻿@using RedisMVCDemo.Models
+@model List<UserModels>
+
+<table>
+    <thead>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>部门</th>
+    </tr>
+    </thead>
+    <tbody>
+    @if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Department)
+                </td>
+            </tr>
+        }
+    }
+    </tbody>
+</table>

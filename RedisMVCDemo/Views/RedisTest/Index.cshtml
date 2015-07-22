@@ -1,0 +1,37 @@
+﻿@using RedisMVCDemo.Models
+@model UserModels
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //ViewBag.Title = "RedisDemo";
+}
+
+
+<h2>@ViewBag.Title</h2>
+<p>
+    @*<a class="btn btn-default" href="#">打开redis</a>*@
+    @Html.ActionLink("打开redis服务","ReStart")
+    <span>@ViewBag.ProcessInfo</span>
+</p>
+
+<div style="margin-bottom: 60px;">@{ Html.RenderPartial("UserList", (List<UserModels>)ViewBag.UserList); }</div>
+
+
+@using (Html.BeginForm("Add", "RedisTest"))
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(m => m.Name)</td>
+            <td>@Html.TextBoxFor(m => m.Name)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Department)</td>
+            <td>@Html.TextBoxFor(m => m.Department)</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="添加" class="btn btn-default"/>
+            </td>
+        </tr>
+    </table>
+}
