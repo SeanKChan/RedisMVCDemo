@@ -6,18 +6,38 @@
     //ViewBag.Title = "RedisDemo";
 }
 
+@section scripts{
+    <script type="text/javascript">
+        $(function() {
+            $("#aRestart").bind("click", function() {
+                $.getJSON("@Url.Action("ReStart")", null, function(data) {
+                    //var result = JSON.parse(data);
+                    $("#aRestart").next("span").text(data.Message);
+                });
+            });
+
+            $("#btnDelete").click(function() {
+                $.getJSON("@Url.Action("Delete")", { id: $("#txtUserId").val() }, function(data) {
+
+                
+            });
+        });
+    });
+    </script>
+
+}
+
 
 <h2>@ViewBag.Title</h2>
 <p>
-    @*<a class="btn btn-default" href="#">打开redis</a>*@
-    @Html.ActionLink("打开redis服务","ReStart")
+    <a id="aRestart" class="btn btn-default" href="#">打开redis</a>
     <span>@ViewBag.ProcessInfo</span>
 </p>
 
 <div style="margin-bottom: 60px;">@{ Html.RenderPartial("UserList", (List<UserModels>)ViewBag.UserList); }</div>
 
 
-@using (Html.BeginForm("Add", "RedisTest"))
+@using (Html.BeginForm("Index", "RedisTest"))
 {
     <table>
         <tr>
@@ -33,5 +53,10 @@
                 <input type="submit" value="添加" class="btn btn-default"/>
             </td>
         </tr>
+        <tr></tr>
     </table>
 }
+
+<p>
+    <label>唯一标识</label><input id="txtUserId" type="text"/><input type="button" id="btnDelete" value="删除"/>
+</p>
