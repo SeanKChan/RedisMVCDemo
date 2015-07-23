@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using ServiceStack.Redis;
+using ServiceStack.Redis.Generic;
 
 namespace RedisMVCDemo.Redis
 {
@@ -56,5 +57,7 @@ namespace RedisMVCDemo.Redis
             }
             return _prcm.GetClient();
         }
+        
+
     }
 }

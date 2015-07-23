@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using ServiceStack.Text;
 
-namespace RedisUitility.Redis
+namespace RedisMVCDemo.Redis
 {
     public class HashOperator:RedisOperatorBase
     {
