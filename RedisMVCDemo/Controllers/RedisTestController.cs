@@ -62,7 +62,7 @@ namespace RedisMVCDemo.Controllers
                     });
                     //return PartialView("UserList", userList);
                     ViewBag.UserList = userList;
-                    ViewBag.Title = "一共多少" + redisClient.GetListCount(ListId1) + "条数据";
+                    ViewBag.Title = "一共" + redisClient.GetListCount(ListId1) + "条数据";
                 }
             }
             return View();
@@ -92,7 +92,7 @@ namespace RedisMVCDemo.Controllers
                 });
 
                 ViewBag.UserList = userList;
-                ViewBag.Title = "一共多少" + redisClient.GetListCount(ListId1) + "条数据";
+                ViewBag.Title = "一共" + redisClient.GetListCount(ListId1) + "条数据";
             }
 
 
